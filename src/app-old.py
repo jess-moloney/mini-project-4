@@ -1,7 +1,7 @@
 # import Flask and jsonify
 from flask import Flask, jsonify, request
 # import Resource, Api and reqparser
-from  flask_restful import Resource, Api, reqparse
+from flask_restful import Resource, Api, reqparse
 import pandas as pd
 import numpy
 import pickle
@@ -23,37 +23,6 @@ api = Api(app)
 #         self.fit(X)
 #         return self.transform(X)
 
-# class CatFeats:
-#     def __init__(self, data):
-#         self.data = data
-
-#     def fit(self, X, y=None):
-#         pass
-
-#     def transform(self, X, y=None):
-#         cat_feats = self.data.dtypes[self.data.dtypes == 'object'].index.tolist()
-#         return X[cat_feats]
-
-#     def fit_transform(self, X, y=None):
-#         self.fit(X)
-#         return self.transform(X)
-
-# class NumFeats:
-#     def __init__(self, data):
-#         self.data = data
-
-#     def fit(self, X, y=None):
-#         pass
-
-#     def transform(self, X, y=None):
-#         cat_feats = self.data.dtypes[self.data.dtypes == 'object'].index.tolist()
-#         num_feats = self.data.dtypes[~self.data.dtypes.index.isin(cat_feats)].index.tolist()
-#         return X[num_feats]
-
-#     def fit_transform(self, X, y=None):
-#         self.fit(X)
-#         return self.transform(X)
-
 model = pickle.load( open( "..\data\model1.pkl", "rb" ) )
 
 class Scoring(Resource):
@@ -70,6 +39,4 @@ class Scoring(Resource):
 api.add_resource(Scoring, '/scoring')
 
 if __name__ == '__main__':
-    app.run(debug=True)
-
-    # app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5000)
