@@ -80,12 +80,14 @@ I will examine these hypotheses by looking at the percentage of applicants in ea
 - SSH'd into AWS virtual machine instance
 - From within a tmux session, opened jupyter lab and copied in the pickle of the final model and the flask app
 - From within the tmux session, ran app.py
-
-## Results/Demo
 - Made POST requests via python and Postman to test that the model successfully returns predicted probabilities of each class (loan not approved or loan approved).
 ![Postman](images/Postman.jpg)
+
+## Results/Demo
 - The model is 78% accurate, with a precision of 76% and a recall of 98%.
 ![Confusion_Matrix](images/rf_model1_confusion_matrix.png)
+- An examination of feature importance shows that credit history is the most important factor in determining whether someone is approved for a loan:
+![Importance](images/Relative_Feature_Importance.png)
 
 ## Challenges 
 - Initial issues making POST requests to the API because the scikit learn version in the app.py file was different from the version in the AWS instance.
