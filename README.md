@@ -119,7 +119,8 @@ I will examine these hypotheses by comparing the percentage of applicants in eac
 ## Future Goals
 - I would like to:
     - look more closely at applicants that did not meet the credit history requirements and see what they have in common, and use that information to experiment with more feature engineering
-    - try integrating more steps into the pipeline.
-    - try RandomSearch instead of GridSearch to conduct hyperparameter tuning within the pipeline.
+    - try integrating more steps into the pipeline
+    - try RandomSearch instead of GridSearch to conduct hyperparameter tuning within the pipeline
+    - try including different imputer types (e.g., KNN imputer), scalers (e.g., MinMax scaler) in the RandomSearch/GridSearch to pick the ones that give the best model performance
     - add the custom functions I created for plotting to .py files and then import them as needed
-    - try using other evaluation techniques for the model (e.g., ROC curve)
+    - investigate if using a different classification threshold would improve the model performance
