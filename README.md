@@ -124,3 +124,7 @@ I will examine these hypotheses by comparing the percentage of applicants in eac
     - try including different imputer types (e.g., KNN imputer), scalers (e.g., MinMax scaler) in the RandomSearch/GridSearch to pick the ones that give the best model performance
     - add the custom functions I created for plotting to .py files and then import them as needed
     - investigate if using a different classification threshold would improve the model performance
+
+## Use Cases
+The methods used for this project could be applied as part of an evaluation of an existing loan approval system. The exploratory data analysis reveals who the loan applicants are, and which loan applicants are more likely to be approved for a loan. Understanding this could help to create more equitable loan eligibility criteria. The machine learning model shows that not having / having credit history is the most important feature determining whether or not a loan is approved. This information could also be used to update loan eligibility criteria, and might indicate the need for new loan products targeted towards applicants with less credit experience.
+
