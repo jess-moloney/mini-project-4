@@ -101,15 +101,15 @@ I will examine these hypotheses by comparing the percentage of applicants in eac
 - Created a flask app in [app.py](src/app.py)
 - SSH'd into AWS virtual machine instance
 - From within a tmux session, opened jupyter lab and copied in the pickle of the final model and the flask app
-- From within the tmux session, ran app.py
+- In my terminal, ran ```python app.py```
 - Made POST requests via python and Postman to test that the model successfully predicts probabilities of each class (loan not approved or loan approved), and then returns an appropriate response (i.e., 'There's an X% probability this loan will be approved / regjected')
 ![Postman](images/Postman_loan_status_probability.jpg)
 
 ## Results/Demo
 - The model is 78% accurate, with a precision of 76% and a recall of 98%.
-- The feature engineering and hyperparameter tuning steps I took did not change the model performance.
+- The feature engineering and hyperparameter tuning steps I took did not change the model performance. Further feature engineering and hyperparameter tuning is likely required to get better results.
 ![Confusion_Matrix](images/rf_model1_confusion_matrix.png)
-- An examination of feature importance shows that credit history is the most important factor in determining whether someone is approved for a loan:
+- An examination of feature importance shows that not having a credit history is the most important factor in determining whether someone is approved for a loan:
 ![Importance](images/Relative_Feature_Importance.png)
 
 ## Challenges
