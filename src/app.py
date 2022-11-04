@@ -63,6 +63,7 @@ class Scoring(Resource):
         # getting predictions from our model.
         # it is much simpler because we used pipelines during development
         res = model.predict_proba(df)
+        
         # we cannot send numpt array as a result
         return res.tolist() 
 
