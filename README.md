@@ -83,7 +83,6 @@ I will examine these hypotheses by comparing the percentage of applicants in eac
         - Imputing mean for missing values using SimpleImputer
 - Applied categorical and numeric preprocessing pipelines to the appropriate columns using Column Transformer
 - Created main pipeline including the preprocessing and modelling steps
-![Pipeline](images/Pipeline.jpg)
 - Trained several classification models to determine which type of model performed the best:
     - Logistic Regression
     - Naive Bayes
@@ -91,7 +90,11 @@ I will examine these hypotheses by comparing the percentage of applicants in eac
     - Support Vector Machine
     - Stochastic Gradient Descent
     - Random Forest
-- Chose the Random Forest for deployment because it had the best F1 Score (0.85)
+- Chose the Random Forest for further development because it had one of the best F1 Scores (0.854).
+- Added a feature engineering step to the pipeline to combine Applicant and Coapplicant Income into a new feature called 'Total Income' (see Random Forest - Iteration 2 in [instructions.ipynb](notebooks/instructions.ipynb))
+![Pipeline](images/Pipelinev2.jpg)
+- Used GridSearch to tune the model's hyperparameters (see Random Forest - Iteration 3 in [instructions.ipynb](notebooks/instructions.ipynb))
+- Tried replacing Standard Scalar with a Function Transformer (see Random Forest - Iteration 4 in [instructions.ipynb](notebooks/instructions.ipynb)) 
 
 ### Step 5 - Model Deployment & Testing
 - Pickled the [final model](data/rf_model1.pkl)
@@ -104,13 +107,19 @@ I will examine these hypotheses by comparing the percentage of applicants in eac
 
 ## Results/Demo
 - The model is 78% accurate, with a precision of 76% and a recall of 98%.
+- The feature engineering and hyperparameter tuning steps I took did not change the model performance.
 ![Confusion_Matrix](images/rf_model1_confusion_matrix.png)
 - An examination of feature importance shows that credit history is the most important factor in determining whether someone is approved for a loan:
 ![Importance](images/Relative_Feature_Importance.png)
 
-## Challenges 
-- Initial issues making POST requests to the API because the scikit learn version in the app.py file was different from the version in the AWS instance.
+## Challenges
+- I initially had difficulty understanding how to integrate custom transformers into the pipeline; the main obstacle was that my preprocessing steps were converting the df_train dataframe into a numpy array, so I had to apply my feature engineering step (combining Applicant and Coapplicant Income into one feature) before doing this preprocessing so I could refer to column names from the dataframe.
+- I had initial issues making POST requests to the API because the scikit learn version in the app.py file was different from the version in the AWS instance.  I solved the issue by updating the sklearn version in the AWS instance.
 
 ## Future Goals
-- More feature engineering
-- More hyperparameter tuning
+- I would like to:
+    - look more closely at applicants that did not meet the credit history requirements and see what they have in common, and use that information to experiment with more feature engineering
+    - try integrating more steps into the pipeline.
+    - try RandomSearch instead of GridSearch to conduct hyperparameter tuning within the pipeline.
+    - add the custom functions I created for plotting to .py files and then import them as needed
+    - try using other evaluation techniques for the model (e.g., ROC curve)

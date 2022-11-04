@@ -1,6 +1,5 @@
 from flask import Flask, request
 from  flask_restful import Resource, Api
-from sklearn.base import BaseEstimator, TransformerMixin
 import pandas as pd
 import numpy
 import pickle
@@ -8,14 +7,7 @@ import pickle
 app = Flask(__name__)
 api = Api(app)
 
-class TotalIncomeAdder(BaseEstimator, TransformerMixin):
-    def fit(self, X , y=None):
-        return self
-    def transform(self, X):
-        X['Total Income'] = X['Applicant Income'] + X['Coapplicant Income']
-        return X
-
-model = pickle.load( open( "rf_model2.pkl", "rb" ) )
+model = pickle.load( open( "rf_model1.pkl", "rb" ) )
 
 class Scoring(Resource):
     def post(self):
