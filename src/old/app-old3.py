@@ -16,15 +16,7 @@ class Scoring(Resource):
         
         # getting predictions from the model
         res = model.predict_proba(df)
-        res = res.tolist()
-        max_value = max(res[0])
-        max_index = res[0].index(max_value)
-        if max_index == 1:
-            res = f'There is a {round(max_value*100,2)}% probability this loan application will be approved.'
-        else:
-            res = f'There is a {round(max_value*100,2)}% probability this loan application will be rejected.'
-        
-        return res
+        return res.tolist() 
 
 # assign endpoint
 api.add_resource(Scoring, '/scoring')

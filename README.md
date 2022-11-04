@@ -80,8 +80,8 @@ I will examine these hypotheses by looking at the percentage of applicants in ea
 - SSH'd into AWS virtual machine instance
 - From within a tmux session, opened jupyter lab and copied in the pickle of the final model and the flask app
 - From within the tmux session, ran app.py
-- Made POST requests via python and Postman to test that the model successfully returns predicted probabilities of each class (loan not approved or loan approved).
-![Postman](images/Postman.jpg)
+- Made POST requests via python and Postman to test that the model successfully predicts probabilities of each class (loan not approved or loan approved), and then returns an appropriate response (i.e., 'There's an X% probability this loan will be approved / regjected')
+![Postman](images/Postman_loan_status_probability.jpg)
 
 ## Results/Demo
 - The model is 78% accurate, with a precision of 76% and a recall of 98%.
