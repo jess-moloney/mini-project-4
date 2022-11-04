@@ -3,9 +3,9 @@
 ### [Assignment](assignment.md)
 
 ## Project/Goals
-The aim of this project is to use historical loan application data to predict which applicants will be approved for a loan.
+The aim of this project is to use historical loan application data to predict if new applicants will be approved for a loan.
 
-To make these predictions, the goal is to create a supervised machine learning classification model using sklearn Pipelines and then to deploy the model in the cloud by creating an API that will respond to POST requests with predicted loan approval. 
+To make these predictions, the goal is to create a supervised machine learning classification model using sklearn Pipelines and then to deploy the model in the cloud by creating an API that will respond to POST requests with a prediction of whether or not a loan application will be approved. 
 
 ## Hypothesis
 
@@ -21,7 +21,7 @@ Before looking at the data, I hypothesized that the following types of applicant
 8. Applicants applying for a lower loan amount
 9. Applicants applying for a shorter-term loan
 
-I will examine these hypotheses by looking at the percentage of applicants in each of these categories who get their loans approved.
+I will examine these hypotheses by comparing the percentage of applicants in each of these categories who get their loans approved (for categorical features), or by comparing the mean values of numeric features for those who get their loans approved vs. those who don't.
 
 ## EDA 
 - Univariate Analysis (Numerical): Examined distribution of income, loan amount, and loan amount term - all are positively skewed with some extreme outliers. It seems possible, based on the other datapoints, that some of the outliers are errors (perhaps an extra zero was added to an income of 8000 to give 80000), although it's difficult to tell without more information.
@@ -58,7 +58,7 @@ I will examine these hypotheses by looking at the percentage of applicants in ea
     - 69 % of all loan applications are approved
     - The largest difference in approval rates is between applicants with a credit history (79% approval rate) and those without a credit history (7% approval rate)
     - There are large imbalances in the number of applicants belonging to different categories
-    - Applicant / Coapplicant Income features are positively skewed due to a small number of extremely high values
+    - Applicant / Coapplicant Income & Loan Amount features are positively skewed due to a small number of extremely high values
 
 
 ## Process
