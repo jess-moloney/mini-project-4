@@ -9,7 +9,7 @@ To make these predictions, the goal is to create a supervised machine learning c
 
 ## Hypothesis
 
-Before looking at the data, I hypothesized that the following types of applicants are would be more likely to get a loan:
+Before looking at the data, I hypothesized that the following types of applicants would be more likely to get a loan:
 
 1. Applicants having a credit history 
 2. Applicants with higher applicant and co-applicant incomes
@@ -35,14 +35,33 @@ I will examine these hypotheses by looking at the percentage of applicants in ea
 - Bivariate Analysis: Examined loan approval rate by category for categorical features, and compared mean of numeric features to loan status.
 ![LA_by_Cat1](images/Loan_Approval_Rate_by_Category(1).png)
 ![LA_by_Cat2](images/Loan_Approval_Rate_by_Category(2).png)
+- Evaluation of original hypotheses that the following applicants would be more likely to have their loan approved:
+    1. Applicants having a credit history
+        - Data supports this
+    2. Applicants with higher applicant and co-applicant incomes 
+        - Data shows no difference / small difference in the opposite direction
+    3. Applicants with higher education level
+        - Data supports this
+    4. Applicants with properties in urban areas with high growth perspectives
+        - Data shows semiurban property area is associated with the highest loan approval rate
+    5. Applicants who are married
+        - Data supports this
+    6. Applicants with fewer dependents
+        - Data shows applicants with 2 dependents are sightly more likely to have their loan approved than those with 0,1, or 3+ dependents
+    7. Applicants who are not self-employed
+        - Data supports this
+    8. Applicants applying for a lower loan amount
+        - Data shows no difference
+    9. Applicants applying for a shorter-term loan
+        - Data shows no difference
 - Key EDA takeaways:
     - 69 % of all loan applications are approved
     - The largest difference in approval rates is between applicants with a credit history (79% approval rate) and those without a credit history (7% approval rate)
     - There are large imbalances in the number of applicants belonging to different categories
+    - Applicant / Coapplicant Income features are positively skewed due to a small number of extremely high values
 
 
 ## Process
-(fill in what you did during EDA, cleaning, feature engineering, modeling, deployment, testing)
 ### Step 1 - Initial Cleaning:
 - Renamed columns for better readability (removed underscores etc.)
 - Made sure there were no duplicate Loan IDs and then dropped the Loan ID column as it wouldn't provide any useful information during analysis
