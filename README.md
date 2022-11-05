@@ -96,16 +96,16 @@ I will examine these hypotheses by comparing the percentage of applicants in eac
 - Used GridSearch to tune the model's hyperparameters (see Random Forest - Iteration 3 in [instructions.ipynb](notebooks/instructions.ipynb))
 - Tried replacing Standard Scalar with a Function Transformer (see Random Forest - Iteration 4 in [instructions.ipynb](notebooks/instructions.ipynb)) 
 
-### Step 5 - Model Deployment & Testing
+### Step 5 - Model Deployment & Testing/Demo
 - Pickled the [final model](data/rf_model1.pkl)
 - Created a flask app in [app.py](src/app.py)
 - SSH'd into AWS virtual machine instance
 - From within a tmux session, opened jupyter lab and copied in the pickle of the final model and the flask app
 - In my terminal, ran ```python app.py```
-- Made POST requests via python and Postman to test that the model successfully predicts probabilities of each class (loan not approved or loan approved), and then returns an appropriate response (i.e., 'There's an X% probability this loan will be approved / regjected')
+- Made POST requests via python and Postman to test that the model successfully predicts probabilities of each class (loan not approved or loan approved), and then returns an appropriate response (i.e., 'There's an X% probability this loan will be approved / rejected')
 ![Postman](images/Postman_loan_status_probability.jpg)
 
-## Results/Demo
+## Results
 - The model is 78% accurate, with a precision of 76% and a recall of 98%.
 - The feature engineering and hyperparameter tuning steps I took did not change the model performance. Further feature engineering and hyperparameter tuning is likely required to get better results.
 ![Confusion_Matrix](images/rf_model1_confusion_matrix.png)
