@@ -78,7 +78,7 @@ I will examine these hypotheses by comparing the percentage of applicants in eac
 - Created individual categorical and numeric preprocessing pipelines to carry out the following preprocessing steps:
     - Categorical: 
         - Imputing most common category for missing values using SimpleImputer
-        - One Hot Encoding features using oneHotEncoder
+        - One Hot Encoding features using OneHotEncoder
     - Numeric:
         - Imputing mean for missing values using SimpleImputer
 - Applied categorical and numeric preprocessing pipelines to the appropriate columns using Column Transformer
@@ -94,7 +94,7 @@ I will examine these hypotheses by comparing the percentage of applicants in eac
 - Added a feature engineering step to the pipeline to combine Applicant and Coapplicant Income into a new feature called 'Total Income' (see Random Forest - Iteration 2 in [instructions.ipynb](notebooks/instructions.ipynb))
 ![Pipeline](images/Pipelinev2.jpg)
 - Used GridSearch to tune the model's hyperparameters (see Random Forest - Iteration 3 in [instructions.ipynb](notebooks/instructions.ipynb))
-- Tried replacing Standard Scalar with a Function Transformer (see Random Forest - Iteration 4 in [instructions.ipynb](notebooks/instructions.ipynb)) 
+- Tried replacing Standard Scalar with a Function Transformer to do a log transformation instead (see Random Forest - Iteration 4 in [instructions.ipynb](notebooks/instructions.ipynb)) 
 
 ### Step 5 - Model Deployment & Testing/Demo
 - Pickled the [final model](data/rf_model1.pkl)
@@ -118,10 +118,10 @@ I will examine these hypotheses by comparing the percentage of applicants in eac
 
 ## Future Goals
 - I would like to:
-    - look more closely at applicants that did not meet the credit history requirements and see what they have in common, and use that information to experiment with more feature engineering
+    - look more closely at applicants that did not meet the credit history requirements and see what they have in common, and possibly use that information to experiment with more feature engineering
     - try integrating more steps into the pipeline
     - try RandomSearch instead of GridSearch to conduct hyperparameter tuning within the pipeline
-    - try including different imputer types (e.g., KNN imputer), scalers (e.g., MinMax scaler) in the RandomSearch/GridSearch to pick the ones that give the best model performance
+    - try including different imputer types (e.g., KNN imputer) and scalers (e.g., MinMax scaler) in the RandomSearch/GridSearch to pick the ones that give the best model performance
     - add the custom functions I created for plotting to .py files and then import them as needed
     - investigate if using a different classification threshold would improve the model performance
 
